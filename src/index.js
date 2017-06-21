@@ -6,11 +6,17 @@ import {Provider} from 'react-redux';
 import Signup from './components/signup';
 import reducer from './reducer';
 import registerServiceWorker from './registerServiceWorker';
+import remoteActionMiddleware from './remote_action_middleware';
+
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/css/bootstrap-theme.css';
 import './index.css';
 
-const store = createStore(reducer)
+const createStoreWithMiddleware = applyMiddleware(
+  remoteActionMiddleware
+)(createStore);
+const store = createStoreWithMiddleware(reducer);
+
 ReactDOM.render((
     <Provider store={store}>
       <Router>
