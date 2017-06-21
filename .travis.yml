@@ -3,9 +3,11 @@ node_js:
 - 6.10.0
 script:
 - npm test
+- npm run build
 notifications:
   email: false
 deploy:
+  local_dir: build
   provider: pages
   skip_cleanup: true
   github_token: $GITHUB_TOKEN
