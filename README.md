@@ -6,6 +6,7 @@ Live app: https://integer-as-a-service.herokuapp.com
 
 # Dependencies
 
+* [Server](https://github.com/otaviosoares/thinkific-challenge-api) must be running
 * Node 6+ with npm or yarn
 
 # Running locally
