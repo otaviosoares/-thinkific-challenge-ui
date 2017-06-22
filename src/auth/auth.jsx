@@ -9,7 +9,7 @@ export default class Auth extends Component {
     return (
       <div>
         <div className="row">
-          <div className="col-md-4 col-md-offset-2">
+          <div className="col-xs-12 col-sm-12 col-md-4 col-md-offset-2">
             <AuthForm
               key='signin'
               form='signin'
@@ -17,7 +17,7 @@ export default class Auth extends Component {
               button='Sign in'
               onSubmit={this.props.signin} />
           </div>
-          <div className="col-md-4">
+          <div className="col-xs-12 col-sm-12 col-md-4">
             <AuthForm
               key='signup'
               form='signup'
