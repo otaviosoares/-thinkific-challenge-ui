@@ -5,7 +5,7 @@ export default props => (
   <div className="next">
     <h4>Get next integer</h4>
     <IconButton
-      style='primary'
+      styles='primary'
       icon='arrow-right'
       onClick={props.onClick} />
   </div>

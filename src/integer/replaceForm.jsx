@@ -40,7 +40,7 @@ export default class ReplaceForm extends Component {
               component={renderField} />
             <span className="input-group-btn">
               <IconButton
-                style='primary'
+                styles='primary'
                 disabled={submitting}
                 icon='refresh' />
             </span>

@@ -18,9 +18,9 @@ test('<IconButton /> should call the callback', () => {
   expect(mockClick).toHaveBeenCalled();
 });
 
-test('<IconButton /> should set the correct style', () => {
+test('<IconButton /> should set the correct styles', () => {
   const component = shallow(
-    <IconButton style='primary' />
+    <IconButton styles='primary' />
   );
   expect(component.find('button')).toHaveClassName('btn btn-primary');
 });
