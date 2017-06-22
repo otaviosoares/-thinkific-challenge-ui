@@ -10,6 +10,7 @@ import {AppOrAuthContainer} from './main/appOrAuth'
 import reducers from './reducers';
 import registerServiceWorker from './registerServiceWorker';
 import httpInterceptors from './auth/interceptors';
+import Messages from './main/messages';
 
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/css/bootstrap-theme.css';
@@ -23,12 +24,14 @@ httpInterceptors(store);
 
 ReactDOM.render((
     <Provider store={store}>
-      <Router>
-        <div className="container">
-          <Route path="/" component={AppOrAuthContainer}>
-          </Route>
-        </div>
-      </Router>
+      <div>
+        <Router>
+          <div className="container">
+            <Route path="/" component={AppOrAuthContainer} />
+          </div>
+        </Router>
+        <Messages />
+      </div>
     </Provider>
   ), document.getElementById('root'));
 

@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { toastr } from 'react-redux-toastr';
 import consts from '../consts'
 
 export function signin(values) {
@@ -10,7 +11,7 @@ export function signup(values) {
 }
 
 export function signout (e) {
-  e.preventDefault();
+  (e && e.preventDefault());
   return {
     type: 'SIGNED_OUT'
   }
@@ -19,6 +20,9 @@ export function signout (e) {
 function submit(values, url) {
   return dispatch => {
     return axios.post(url, values)
-      .then(response => dispatch({type: 'USED_FETCHED', payload: response.data}))
+      .then(response => {
+        toastr.success('Success', 'Welcome to integer as a service.')
+        dispatch({type: 'USED_FETCHED', payload: response.data});
+      })
   }
 }
