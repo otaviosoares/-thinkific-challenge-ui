@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import {connect} from 'react-redux';
-import App from '../App';
+import App from './app';
 import {AuthContainer} from '../auth/auth';
 
 export default class AppOrAuth extends Component {

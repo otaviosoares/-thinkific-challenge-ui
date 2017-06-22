@@ -53,7 +53,7 @@ test('handles SIGNED_OUT', () => {
     validToken: true
   });
   
-  const nextState = reducer(initialState, actions.signout());
+  const nextState = reducer(initialState, actions.signout({preventDefault: jest.fn()}));
 
    expect(nextState).toEqual(fromJS({
     validToken: false
@@ -66,7 +66,7 @@ test('SIGNED_OUT should clear the localStorage', () => {
     validToken: true
   });
   
-  reducer(initialState, actions.signout());
+  reducer(initialState, actions.signout({preventDefault: jest.fn()}));
 
   expect(localStorage.getItem('_auth')).toEqual(null);
 });

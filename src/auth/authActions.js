@@ -9,7 +9,8 @@ export function signup(values) {
   return submit(values, `${consts.BASE_URL}/v1/user`)
 }
 
-export function signout () {
+export function signout (e) {
+  e.preventDefault();
   return {
     type: 'SIGNED_OUT'
   }
