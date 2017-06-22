@@ -3,25 +3,26 @@ import ReactDOM from 'react-dom';
 import {BrowserRouter as Router, Route} from 'react-router-dom';
 import {createStore, applyMiddleware} from 'redux';
 import {Provider} from 'react-redux';
-import Signup from './components/signup';
-import reducer from './reducer';
+import thunk from 'redux-thunk';
+import multi from 'redux-multi';
+import { composeWithDevTools } from 'redux-devtools-extension';
+import {AppOrAuthContainer} from './main/appOrAuth'
+import reducers from './reducers';
 import registerServiceWorker from './registerServiceWorker';
-import remoteActionMiddleware from './remote_action_middleware';
 
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/css/bootstrap-theme.css';
 import './index.css';
 
-const createStoreWithMiddleware = applyMiddleware(
-  remoteActionMiddleware
-)(createStore);
-const store = createStoreWithMiddleware(reducer);
-
+const store = createStore(reducers, composeWithDevTools(
+  applyMiddleware(thunk, multi),
+));
 ReactDOM.render((
     <Provider store={store}>
       <Router>
-        <div>
-          <Route path="/" component={Signup} />
+        <div className="container">
+          <Route path="/" component={AppOrAuthContainer}>
+          </Route>
         </div>
       </Router>
     </Provider>

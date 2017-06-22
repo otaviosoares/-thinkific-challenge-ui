@@ -1,13 +1,12 @@
 import React from 'react';
 import { shallow }from 'enzyme';
-import Signup from './';
+import AuthForm from './authForm';
 
-test('<Signup /> submits', () => {
+test('<AuthForm /> submits', () => {
   const mockClick = jest.fn();
   const component = shallow(
-    <Signup onSubmit={mockClick}></Signup>
+    <AuthForm handleSubmit={mockClick}></AuthForm>
   );
-
   component.find('form').simulate('submit');
   expect(mockClick).toHaveBeenCalled();
 });
