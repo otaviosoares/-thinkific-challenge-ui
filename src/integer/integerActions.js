@@ -17,10 +17,10 @@ export function current () {
   }
 }
 
-export function replace (integer) {
+export function replace (values) {
   const url = `${consts.BASE_URL}/v1/current`;
   return dispatch => {
-    return axios.put(url, {integer})
+    return axios.put(url, values)
       .then(response => dispatch({type: 'SET_INTEGER', payload: response.data.integer}))
   }
 }

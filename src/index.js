@@ -13,6 +13,7 @@ import httpInterceptors from './auth/interceptors';
 
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/css/bootstrap-theme.css';
+import 'font-awesome/css/font-awesome.min.css';
 import './index.css';
 
 const store = createStore(reducers, composeWithDevTools(

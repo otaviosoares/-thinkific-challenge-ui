@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import Current  from './current'
+import Next  from './next'
+import { ReplaceFormContainer }  from './replaceForm'
 import { next, replace, current } from './integerActions'
 
 export default class Integer extends Component {
@@ -19,12 +21,18 @@ export default class Integer extends Component {
             </div>
             <div className="panel-body">
               <div className="row">
-                <Current current={this.props.integer} />
-                <div className="col-xs-12 col-sm-6 col-md-4">
-                  <button onClick={this.props.next}>Next Integer</button>
+                <div className="col-xs-12 col-sm-8 col-md-10">
+                  <Current current={this.props.integer} />
                 </div>
-                <div className="col-xs-12 col-sm-6 col-md-4">
-                  <button onClick={this.props.next}>Next Integer</button>
+                <div className="col-xs-12 col-sm-4 col-md-2">
+                  <div className="row">
+                    <div className="col-xs-12">
+                      <Next onClick={this.props.next} />
+                    </div>
+                    <div className="col-xs-12">
+                      <ReplaceFormContainer onSubmit={this.props.replace} />
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>

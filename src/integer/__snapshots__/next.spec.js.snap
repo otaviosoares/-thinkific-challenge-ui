@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`it renders 1`] = `
+<div
+  className="next"
+>
+  <h4>
+    Get next integer
+  </h4>
+  <Component
+    icon="arrow-right"
+    style="primary"
+  />
+</div>
+`;

@@ -44,7 +44,7 @@ describe('async actions', () => {
     ];
 
     const store = mockStore({});
-    store.dispatch(actions.replace(newInteger))
+    store.dispatch(actions.replace({integer: newInteger}))
       .then(() => {
         expect(store.getActions()).toEqual(expectedActions);
       })
