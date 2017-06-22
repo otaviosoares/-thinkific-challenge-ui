@@ -18,9 +18,10 @@ function invalidateToken(state) {
 export default function(state = INITIAL_STATE, action) {
   switch (action.type) {
   case 'USED_FETCHED':
-    action.payload = action.payload.set('validToken', true);
-    localStorage.setItem(localStorageKey, JSON.stringify(action.payload))
-    return setUser(state, Map(action.payload));
+    let payload = Map(action.payload)
+    payload = payload.set('validToken', true);
+    localStorage.setItem(localStorageKey, JSON.stringify(payload))
+    return setUser(state, payload);
   case 'SIGNED_OUT':
     localStorage.removeItem(localStorageKey, JSON.stringify(action.payload))
     return invalidateToken(state);
