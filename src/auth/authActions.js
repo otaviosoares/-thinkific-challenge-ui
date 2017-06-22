@@ -1,16 +1,23 @@
 import axios from 'axios';
-import CONST from '../const'
+import consts from '../consts'
 
 export function signin(values) {
-  return submit(values, `${CONST.BASE_URL}/v1/auth/local`)
+  return submit(values, `${consts.BASE_URL}/v1/auth/local`)
 }
 
 export function signup(values) {
-  return submit(values, `${CONST.BASE_URL}/v1/user`)
+  return submit(values, `${consts.BASE_URL}/v1/user`)
+}
+
+export function signout () {
+  return {
+    type: 'SIGNED_OUT'
+  }
 }
 
 function submit(values, url) {
-  return dispatch =>
-    axios.post(url, values)
+  return dispatch => {
+    return axios.post(url, values)
       .then(response => dispatch({type: 'USED_FETCHED', payload: response.data}))
+  }
 }

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { IntegerContainer } from './integer/integer';
 import './App.css';
 
 class App extends Component {
@@ -6,14 +7,16 @@ class App extends Component {
     return (
       <div className="container">
         <div className="navbar-header">
-          <a className="navbar-brand" href="#">Project name</a>
+          <span className="navbar-brand">Integer as a Service</span>
         </div>
         <div id="navbar" className="collapse navbar-collapse">
           <ul className="nav navbar-nav">
-            <li className="active"><a href="#">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="#contact">Logout</a></li>
           </ul>
+        </div>
+
+        <div className="content">
+          <IntegerContainer />
         </div>
       </div>
     );
