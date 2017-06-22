@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`it renders 1`] = `
+<div
+  className="col-xs-12 col-sm-6 col-md-4"
+>
+  <div
+    className="bg-primary text-center current"
+  >
+    Current integer is:
+    <br />
+    <strong>
+      10
+    </strong>
+  </div>
+</div>
+`;

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
+import Current  from './current'
 import { next, replace, current } from './integerActions'
 
 export default class Integer extends Component {
@@ -10,20 +11,23 @@ export default class Integer extends Component {
 
   render() {
     return (
-      <div>
-        <div className="row">
-          <div className="col-md-4 col-md-offset-2">
-            CURRENT: {this.props.integer}
-          </div>
-        </div>
-        <div className="row">
-          <div className="col-md-4">
-            <button onClick={this.props.next}>Next Integer</button>
-          </div>
-        </div>
-        <div className="row">
-          <div className="col-md-4">
-            <button onClick={this.props.next}>Next Integer</button>
+      <div className="container">
+        <div className="col-xs-12">
+          <div className="panel panel-primary">
+            <div className="panel-heading">
+              Integer manipulation
+            </div>
+            <div className="panel-body">
+              <div className="row">
+                <Current current={this.props.integer} />
+                <div className="col-xs-12 col-sm-6 col-md-4">
+                  <button onClick={this.props.next}>Next Integer</button>
+                </div>
+                <div className="col-xs-12 col-sm-6 col-md-4">
+                  <button onClick={this.props.next}>Next Integer</button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

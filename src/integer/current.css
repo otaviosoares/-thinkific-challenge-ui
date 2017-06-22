@@ -1,0 +1,8 @@
+.current {
+  padding: 30px;
+  font-size: 2em;
+}
+
+.current strong{
+  font-size: 3em;
+}
