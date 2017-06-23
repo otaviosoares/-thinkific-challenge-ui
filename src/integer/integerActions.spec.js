@@ -23,6 +23,8 @@ describe('async actions', () => {
       .reply(200, {integer: 77});
     
     const expectedActions = [
+      {"type": "loading-bar/SHOW"},
+      {"type": "loading-bar/HIDE"},
       { type: 'SET_INTEGER', payload: 77 }
     ];
 
@@ -40,6 +42,8 @@ describe('async actions', () => {
       .reply(200, {integer: newInteger});
     
     const expectedActions = [
+      {"type": "loading-bar/SHOW"},
+      {"type": "loading-bar/HIDE"},
       { type: 'SET_INTEGER', payload: newInteger }
     ];
 
@@ -57,6 +61,8 @@ describe('async actions', () => {
       .reply(200, {integer: newInteger});
     
     const expectedActions = [
+      {"type": "loading-bar/SHOW"},
+      {"type": "loading-bar/HIDE"},
       { type: 'SET_INTEGER', payload: newInteger }
     ];
 

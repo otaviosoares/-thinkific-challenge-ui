@@ -11,6 +11,7 @@ import reducers from './reducers';
 import registerServiceWorker from './registerServiceWorker';
 import httpInterceptors from './auth/interceptors';
 import Messages from './main/messages';
+import LoadingBar from 'react-redux-loading-bar'
 
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/css/bootstrap-theme.css';
@@ -25,6 +26,7 @@ httpInterceptors(store);
 ReactDOM.render((
     <Provider store={store}>
       <div>
+        <LoadingBar style={{ backgroundColor: '#337ab7'}} />
         <Router>
           <div className="container">
             <Route path="/" component={AppOrAuthContainer} />

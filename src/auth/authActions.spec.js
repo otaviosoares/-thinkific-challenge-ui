@@ -23,6 +23,8 @@ describe('async actions', () => {
       .reply(200, {token: '123'});
     
     const expectedActions = [
+      {"type": "loading-bar/SHOW"},
+      {"type": "loading-bar/HIDE"},
       { type: 'USED_FETCHED', payload: { token: '123' } }
     ];
 
@@ -39,6 +41,8 @@ describe('async actions', () => {
       .reply(200, {token: '123'});
     
     const expectedActions = [
+      {"type": "loading-bar/SHOW"},
+      {"type": "loading-bar/HIDE"},
       { type: 'USED_FETCHED', payload: { token: '123' } }
     ];
 
