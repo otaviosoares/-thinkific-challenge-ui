@@ -7,6 +7,7 @@ export default props => (
     <IconButton
       styles='primary'
       icon='arrow-right'
+      disabled={props.isLoading}
       onClick={props.onClick} />
   </div>
 )

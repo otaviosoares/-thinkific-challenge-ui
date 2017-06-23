@@ -25,7 +25,7 @@ const renderField = ({ input, placeholder, type, className, meta: { touched, err
 
 export default class ReplaceForm extends Component {
   render() {
-    const { handleSubmit, submitting } = this.props;
+    const { handleSubmit, submitting, isLoading } = this.props;
     
     return (
       <div role="form">
@@ -41,7 +41,7 @@ export default class ReplaceForm extends Component {
             <span className="input-group-btn">
               <IconButton
                 styles='primary'
-                disabled={submitting}
+                disabled={isLoading || submitting}
                 icon='refresh' />
             </span>
           </div>

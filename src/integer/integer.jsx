@@ -27,10 +27,14 @@ export default class Integer extends Component {
                 <div className="col-xs-12 col-sm-4 col-md-2">
                   <div className="row">
                     <div className="col-xs-12">
-                      <Next onClick={this.props.next} />
+                      <Next
+                        isLoading={this.props.isLoading}
+                        onClick={this.props.next} />
                     </div>
                     <div className="col-xs-12">
-                      <ReplaceFormContainer onSubmit={this.props.replace} />
+                      <ReplaceFormContainer
+                        isLoading={this.props.isLoading}
+                        onSubmit={this.props.replace} />
                     </div>
                   </div>
                 </div>
@@ -43,7 +47,7 @@ export default class Integer extends Component {
   }
 }
 
-const mapStateToProps = state => ({integer: state.integer})
+const mapStateToProps = state => ({integer: state.integer, isLoading: state.loadingBar})
 const mapDispatchToProps = dispatch => bindActionCreators({ next, replace, current }, dispatch)
 
 export const IntegerContainer = connect(mapStateToProps, mapDispatchToProps)(Integer)

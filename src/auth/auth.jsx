@@ -15,6 +15,7 @@ export default class Auth extends Component {
               form='signin'
               title='Sign in'
               button='Sign in'
+              isLoading={this.props.isLoading}
               onSubmit={this.props.signin} />
           </div>
           <div className="col-xs-12 col-sm-12 col-md-4">
@@ -23,6 +24,7 @@ export default class Auth extends Component {
               form='signup'
               title='Sign up'
               button='Sign up'
+              isLoading={this.props.isLoading}
               onSubmit={this.props.signup} />
           </div>
         </div>
@@ -35,6 +37,7 @@ export default class Auth extends Component {
   }
 }
 
+const mapStateToProps = state => ({ isLoading: state.loadingBar })
 const mapDispatchToProps = dispatch => bindActionCreators({ signup, signin }, dispatch)
 
-export const AuthContainer = connect(null, mapDispatchToProps)(Auth)
+export const AuthContainer = connect(mapStateToProps, mapDispatchToProps)(Auth)

@@ -27,7 +27,7 @@ const renderField = ({ input, placeholder, type, className, meta: { touched, err
 
 export default class AuthForm extends Component {
   render() {
-    const {handleSubmit, submitting} = this.props;
+    const {handleSubmit, submitting, isLoading} = this.props;
     
     return (
       <div role="form" className="panel panel-default auth-form">
@@ -53,7 +53,7 @@ export default class AuthForm extends Component {
                 type="password"
                 component={renderField} />
             </div>
-            <button type="submit" className='btn btn-primary' disabled={submitting}>{this.props.button}</button>
+            <button type="submit" className='btn btn-primary' disabled={isLoading || submitting}>{this.props.button}</button>
           </form>
         </div>
       </div>
